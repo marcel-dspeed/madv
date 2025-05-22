@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MadV Roleplay – Übersicht</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --accent: #ffffff;
+      --highlight: #ff4444;
+      --text: #f0f0f0;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: var(--bg) url('https://media.discordapp.net/attachments/1221578259482021993/1273577188943204417/banner.png?ex=683042af&is=682ef12f&hm=f1373c0e4e20dd4830f17b6cf6cef1ffb375d7bedfaaa999ece2b18b55cb85c3&=&format=webp&quality=lossless&width=1768&height=540') no-repeat center center fixed;
+      background-size: cover;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0,0,0,0.85);
+      z-index: -1;
+    }
+    header {
+      background: rgba(10, 10, 10, 0.9);
+      padding: 0.65rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    }
+    header h1 {
+      line-height: 1.2;
+}
+    header h1 .v-letter {
+      color: var(--highlight);
+      text-shadow: 0 0 6px #ffffffaa;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      background-color: rgba(18, 18, 18, 0.95);
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav button {
+      background: transparent;
+      border: 2px solid var(--accent);
+      color: var(--accent);
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 8px;
+    }
+    nav button:hover {
+      background-color: var(--highlight);
+      color: #fff;
+      border-color: var(--highlight);
+    }
+    main {
+  width: 100%;
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  background-color: transparent;
+}
+    section {
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    section.active {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  color: var(--text);
+	text-shadow:
+		-0.4px -0.4px 0.4px #ff4444,
+		0.4px -0.4px 0.4px #ff4444,
+		-0.4px  0.4px 0.4px #ff4444,
+		0.4px  0.4px 0.4px #ff4444;
+	}
+    section h2 {
+      font-size: 2rem;
+      border-left: 6px solid var(--highlight);
+      padding-left: 1rem;
+      margin-bottom: 1rem;
+    }
+    section p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    .highlight {
+      color: var(--highlight);
+      font-weight: bold;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  .v-letter {
+      color: var(--highlight);
+      text-shadow: 0 0 6px #ffffffaa;
+	}
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-nav > button,
+.main-nav .dropbtn {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 0.5rem 0.35rem;
+  cursor: pointer;
+  border-radius: 2px;
+  font-size: 0.87rem;
+  transition: all 0.2s;
+  min-width: 80px;
+  position: relative;
+  z-index: 2;
+  height: 31px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-nav > button:hover,
+.main-nav .dropbtn:hover {
+  background-color: var(--highlight);
+  color: #fff;
+  border-color: var(--highlight);
+}
+
+/* Dropdown */
+.main-nav .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.main-nav .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 105%;
+  left: 0;
+  min-width: 190px;
+  background-color: #181818f2;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.24);
+  z-index: 10;
+  flex-direction: column;
+  padding: 0.35rem 0;
+}
+
+.main-nav .dropdown-content button {
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  background: none;
+  color: var(--accent);
+  padding: 0.60rem 1.1rem;
+  text-align: left;
+  font-size: 1rem;
+  transition: background 0.14s, color 0.14s;
+}
+
+.dropdown.open .dropdown-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown .dropdown-content { display: none; }
+
+ </style>
+</head>
+
+<body>
+  <header>
+    <h1>Mad<span class="v-letter">V</span> Roleplay</h1>
+    <p>Willkommen im modernsten Roleplay-Erlebnis – mit Tiefgang, Realismus und Innovation.</p>
+  </header>
+<nav class="main-nav">
+  <button onclick="showModule('start')">🏠 Start</button>
+  <button onclick="showModule('grundkonzept')">🧭 Grundkonzept</button>
+  <button onclick="showModule('produktion')">⚒️ Produktion</button>
+  <button onclick="showModule('immobilien')">🏘️ Immobilien</button>
+
+  <div class="dropdown">
+    <button class="dropbtn" type="button">🏛️ Gesellschaft & Staat ▼</button>
+    <div class="dropdown-content">
+      <button onclick="showModule('staat')">Regierung & Verwaltung</button>
+      <button onclick="showModule('cityhall')">City Hall & DMV</button>
+      <button onclick="showModule('justiz')">Justiz & Gerichte</button>
+      <button onclick="showModule('polizei')">Polizei & Rettung</button>
+      <button onclick="showModule('dispatch')">Dispatch- & Air-Defense-System</button>
+      <button onclick="showModule('medizin')">Medizin & EMS</button>
+      <button onclick="showModule('fraktionen')">Fraktionen & Organisationen</button>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn" type="button">🧵 Unterwelt ▼</button>
+    <div class="dropdown-content">
+      <button onclick="showModule('kriminalitaet')">Kriminalität (Überblick)</button>
+      <button onclick="showModule('straftaten')">Straftaten & Überfälle</button>
+      <button onclick="showModule('traphouse')">Traphouse & Angebot/Nachfrage</button>
+      <button onclick="showModule('hostage')">Geisel-/Hostage-System</button>
+      <button onclick="showModule('einbruch')">Einbruch & Lockpicking</button>
+      <button onclick="showModule('hehler')">Schwarzmarkt & Hehler</button>
+      <button onclick="showModule('drogen')">Drogen</button>
+      <button onclick="showModule('waffen')">Waffen & Schmuggel</button>
+      <button onclick="showModule('graffiti')">Graffiti-System & Gebietsmarkierung</button>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn" type="button">💼 Wirtschaft & Arbeit ▼</button>
+    <div class="dropdown-content">
+      <button onclick="showModule('berufe')">Berufe & Karriere</button>
+      <button onclick="showModule('unternehmen')">Unternehmen & Shops</button>
+      <button onclick="showModule('wirtschaft')">Wirtschaft & Handel</button>
+      <button onclick="showModule('ressourcen')">Ressourcen & Produktion</button>
+      <button onclick="showModule('fahrzeuge')">Fahrzeuge & Garagen</button>
+      <button onclick="showModule('crafting')">Crafting & Rezept-Lernsystem</button>
+      <button onclick="showModule('technologie')">Technologie & Systeme</button>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn" type="button">🎵 Soziales, Freizeit & Events ▼</button>
+    <div class="dropdown-content">
+      <button onclick="showModule('musik')">Musik & Medien</button>
+      <button onclick="showModule('events')">Events & Locations</button>
+      <button onclick="showModule('freizeit')">Freizeit & Aktivitäten</button>
+      <button onclick="showModule('interaktionen')">Interaktionen & Props</button>
+      <button onclick="showModule('beduerfnisse')">Bedürfnisse & Lebenssystem</button>
+      <button onclick="showModule('reputation')">Reputation & NPC-Beziehungen</button>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn" type="button">🚀 Technik & Innovation ▼</button>
+    <div class="dropdown-content">
+      <button onclick="showModule('wetter')">Wetter- & Zonensteuerung</button>
+      <button onclick="showModule('kameras')">Kamera- & Überwachungssystem</button>
+      <button onclick="showModule('drohnen')">Drohnen & Terminals</button>
+      <button onclick="showModule('banking')">Banking & Finanzen</button>
+      <button onclick="showModule('propfeature')">Prop- & Mapping-System</button>
+      <button onclick="showModule('forschung')">Forschung & Innovation</button>
+    </div>
+  </div>
+
+  <button onclick="showModule('support')">💬 Support & Community</button>
+</nav>
+
+<main>
+  <!-- Willkommen / Start -->
+  <section id="start" class="active">
+    <h2>🏠 Willkommen</h2>
+    <hr><br>
+    <p>
+      Mad<span class="v-letter">V</span> Roleplay ist nicht einfach nur ein Server – es ist eine vollständige, lebendige Welt.
+      Hier entsteht ein realistisches und intensives Rollenspiel-Erlebnis, das auf echtem Fortschritt, tiefer Immersion und glaubwürdigen Strukturen basiert.
+    </p>
+    <p>
+      In unserer Spielwelt vergeht ein ganzes <strong>Ingame-Jahr in nur einem realen Monat</strong>.<br>
+      Das bedeutet:<br>
+      <br>🔸 Wirtschaft und Gesellschaft entwickeln sich schnell, aber nachvollziehbar.
+      <br>🔸 Entscheidungen haben Konsequenzen – gute wie schlechte.
+      <br>🔸 Du kannst innerhalb kurzer Zeit Karriere machen – oder alles verlieren.
+    </p><br>
+    <p>
+      Mit über <strong>30 komplexen Modulen</strong>, darunter Fraktionen, Berufe, Wirtschaft, Drogen, Justiz, Medizin, Musik und vieles mehr,
+      bietet Mad<span class="v-letter">V</span> Roleplay eine unvergleichlich tiefe Spielerfahrung.
+    </p>
+	<p>
+		<span class="highlight">Nutze das Menü oben, um in einzelne Module einzutauchen und herauszufinden, wie vielseitig unsere Welt ist.</span><br>
+        <a href="https://servers.fivem.net/servers/detail/ze4gqp" target="_blank" style="display:inline-block;margin-top:1rem;padding:0.6rem 1.2rem;background-color:#ff4444;color:#fff;text-decoration:none;border-radius:6px;font-weight:bold;">Deine Geschichte beginnt jetzt</a>
+      </p>
+  </section>
+
+  <!-- Grundkonzept -->
+  <section id="grundkonzept">
+    <h2>🧭 Grundkonzept</h2>
+    <hr><br>
+    <p>
+      <strong>Mad<span class="v-letter">V</span> Roleplay</strong> basiert auf einem einzigartigen Zeitmodell: <strong>Ein echter Monat entspricht einem vollständigen Ingame-Jahr</strong>. Dadurch entsteht eine intensive, dynamische Welt mit echter Charakterentwicklung.
+    </p>
+    <p>
+      Unsere Philosophie beruht auf dem Prinzip des <strong>realitätsnahen Rollenspiels</strong>. Alles, was ein Spieler tut, hat Konsequenzen – sowohl kurzfristig als auch langfristig. Vom Straßenkriminellen bis zum Regierungsmitglied ist jede Karriere möglich, wenn der Weg dorthin logisch und durchdacht ausgespielt wird.
+    </p>
+    <ul>
+      <li><b>Realistische Wirtschaft:</b> Preise, Einkommen und Besitzverhältnisse orientieren sich an echten Werten. Millionär zu werden erfordert unternehmerisches Geschick oder einflussreiche Verbindungen – wie im echten Leben.</li>
+      <li><b>Tiefes Strafsystem:</b> Polizeiarbeit basiert auf realen Verfahren. Einfache Vergehen führen zu Tickets oder Verwarnungen, schwere Verbrechen zu langfristigen Haftstrafen mit Reaktionsmöglichkeiten im Rollenspiel.</li>
+      <li><b>Persönliche Entwicklung:</b> Charaktere altern, erlernen Berufe, sammeln Erfahrungen und bauen Netzwerke auf. Jeder Fortschritt wird durch konsequentes Spielverhalten verdient.</li>
+      <li><b>Gesellschaftliche Dynamik:</b> Gangs, Polizei, Regierung, Justiz, Medien, Unternehmen – alle Fraktionen greifen ineinander und beeinflussen sich gegenseitig. Entscheidungen einer Gruppe haben spürbare Auswirkungen auf die gesamte Spielwelt.</li>
+      <li><b>Erlernbare Fähigkeiten & Wissen:</b> Spieler lernen Berufe, Rezepte, Verfahren und Methoden im Laufe der Zeit. Einige Inhalte sind geheim oder fraktionsintern und müssen aktiv entdeckt oder weitergegeben werden.</li>
+      <li><b>Keine Komfortzonen:</b> Du brauchst Essen, Trinken, Medikamente – und musst deine Umgebung kennen. Temperaturen, Verletzungen, Krankheiten oder Mangelernährung beeinflussen deinen Charakter direkt.</li>
+      <li><b>Technische Tiefe:</b> Fortschrittliche Systeme wie Drohnen, Wetterzonen, Kamerasysteme, Regierung mit funktionierendem DOJ, Banking, Registrierungen und Crafting mit Skill-Fortschritt sorgen für langfristige Immersion.</li>
+      <li><b>Soziale Konsequenz:</b> Jeder kennt jeden. Ruf, Verhalten und Entscheidungen sind entscheidend für den langfristigen Erfolg – oder Untergang.</li>
+    </ul>
+    <p>
+      Unser Ziel ist ein <strong>Server, der sich wie eine echte Welt anfühlt</strong>. Kein Grinding, keine Pay-to-Win-Mechaniken – sondern glaubwürdige Rollen, glaubwürdige Wege und glaubwürdige Folgen.
+    </p>
+  </section>
+
+  <!-- Produktion & Ressourcen -->
+  <section id="produktion">
+    <h2>⚒️ Produktion & Ressourcen</h2>
+    <hr><br>
+    <p><b>Die Grundlage unserer Welt liegt in ihrer wirtschaftlichen Tiefe:</b> <br>Alles hat Herkunft, Form und Zweck. Ob Getreide oder Gold – jedes Produkt entsteht durch Zeit, Ort und Entscheidung.</p>
+    <ul>
+      <li><b>Farmen:</b> Felder bestellen, Pflanzen anbauen, ernten und damit die Basis für Nahrung, Drogen, Medizin oder Tierfutter schaffen.</li>
+      <li><b>Minen:</b> Metalle, Gestein oder Edelstoffe gewinnen – ruhig und stetig, für alle, die Wert schaffen wollen.</li>
+      <li><b>Schmelze:</b> Materialien werden veredelt (Erz zu Barren, Sand zu Glas, Asche zu Chemikalien) – Rückgrat vieler Industrien.</li>
+      <li><b>Herstellungssystem:</b> Echtes Crafting mit nachvollziehbaren Produktionsketten und Ergebnis nach Zeit, Ort, Können.</li>
+      <li><b>Natürlicher Wirtschaftskreislauf:</b> Alles wird erzeugt, verarbeitet, transportiert, verkauft – Entscheidungen über Lagerung und Zielgruppe beeinflussen Gewinn und Risiko.</li>
+    </ul>
+    <p><strong>Produktion bedeutet nicht nur Arbeit – sondern Einfluss. Wer Ressourcen kontrolliert, kontrolliert Macht.</strong></p>
+  </section>
+
+  <!-- Immobilien & Wohnen -->
+  <section id="immobilien">
+    <h2>🏨 Immobilien & Wohnen</h2>
+    <hr><br>
+    <p>
+      <strong>Immobilien sind mehr als nur Wände.</strong> Sie sind Rückzugsort, Statussymbol und Ausgangspunkt für neue Geschichten.
+    </p>
+    <ul>
+      <li><b>Begehbare Häuser:</b> Realistisch nutzbare Immobilien, frei betret- und dekorierbar. Jedes Objekt ist ein echter Spielort mit funktionalem Innenleben.</li>
+      <li><b>Garagensystem:</b> Fahrzeuge bleiben am Abstellort, auch nach Server-Restart.</li>
+      <li><b>Sicherheit & Zugriff:</b> Zugang via PIN, Schlüssel, Fraktionsrecht oder Jobbindung steuerbar.</li>
+      <li><b>Besitz & Vermietung:</b> Kaufen, verkaufen, vermieten – Immobilien als Investment oder Zuhause.</li>
+      <li><b>Sozialer Raum:</b> Treffpunkt, Lager, Geschäft, Versteck oder Bühne für Events und RP.</li>
+    </ul>
+    <p>Wer wohnt, hat Wurzeln. Und wer Raum schafft, schreibt Geschichte.</p>
+  </section>
+
+  <!-- Staat & Regierung -->
+  <section id="staat">
+    <h2>🏛️ Staat & Regierung</h2>
+    <hr><br>
+    <p>
+      <strong>Der Staat ist kein Deko-Element – er ist Motor und Spiegel der Gesellschaft.</strong>
+      Unser Regierungssystem ist funktional, dynamisch und tief im Rollenspiel verankert.
+    </p>
+    <ul>
+      <li><b>Demokratische Struktur:</b> Wahlen für Bürgermeister, Gouverneure oder Minister. Jeder Spieler kann kandidieren.</li>
+      <li><b>DOJ – Department of Justice:</b> Unabhängige Justiz mit Verfahren, Akten und RP.</li>
+      <li><b>Verwaltungssystem:</b> City Hall für Ausweise, Lizenzen, Firmengründung, Genehmigungen.</li>
+      <li><b>Steuern & Finanzen:</b> Staatliche Steuern auf Einkommen, Besitz oder Transaktionen.</li>
+      <li><b>Gesetzgebung:</b> Neue Gesetze und Änderungen durch Parlament/Stadtrat.</li>
+    </ul>
+    <p><strong>Regieren ist Verantwortung – nicht nur Macht.</strong></p>
+  </section>
+
+  <!-- Justiz & Strafvollzug -->
+  <section id="justiz">
+    <h2>⚖️ Justiz & Strafvollzug</h2>
+    <hr><br>
+    <p>
+      <strong>Recht ist kein Werkzeug – es ist die Grundlage unserer Gesellschaft.</strong>
+      Die Justiz sorgt für Ordnung, Gerechtigkeit und Konsequenz.
+    </p>
+    <ul>
+      <li><b>Gerichtsverfahren:</b> Recht auf Verteidigung, faire Verhandlung, Akteneinsicht und Berufung.</li>
+      <li><b>Richter & Anwälte:</b> Unabhängige Entscheidungen, Beratung und Vertretung.</li>
+      <li><b>Haftsystem:</b> Haftstrafen nach Zeitmodell, Arbeit und RP beeinflussen Verlauf.</li>
+      <li><b>Bewährung & Rückfall:</b> Gute Führung = frühere Entlassung, Rückfall = härtere Konsequenz.</li>
+      <li><b>Beweissystem:</b> Polizeiliche Akten, Kameraaufnahmen, Zeugenaussagen uvm.</li>
+      <li><b>Rechtsstaatlichkeit:</b> Recht auf Verteidigung, Akteneinsicht, Widerspruch.</li>
+    </ul>
+    <p><strong>Justiz ist der Garant dafür, dass RP Gewicht hat.</strong></p>
+  </section>
+
+  <!-- Medizin & Rettungssystem -->
+  <section id="medizin">
+    <h2>⚕️ Medizin & Rettungssystem</h2>
+    <hr><br>
+    <p>
+      <strong>Gesundheit ist keine Zahl – sie ist ein Zustand, den man spürt.</strong>
+      Unser medizinisches System geht weit über einfache Heilung hinaus.
+    </p>
+    <ul>
+      <li><b>Detaillierte Verletzungen:</b> Mehrere Körperzonen, unterschiedliche Verletzungsarten mit Symptomen.</li>
+      <li><b>Behandlungen:</b> Von Erste-Hilfe bis OP – Behandlungen brauchen Zeit, Ausrüstung und Wissen.</li>
+      <li><b>Notfallversorgung:</b> Rettungsdienst (EMS) mit echten Fahrzeugen, Funk und RP.</li>
+      <li><b>Langzeitfolgen:</b> Unbehandelte Verletzungen führen zu bleibenden Schäden.</li>
+      <li><b>Medizinische Berufe:</b> Sanitäter, Arzt, Chirurg, Apotheker – mit Verantwortung und Fachgebiet.</li>
+      <li><b>Rettung mit Konsequenz:</b> Wiederbelebung ist begrenzt, aufwendig und nicht garantiert.</li>
+    </ul>
+    <p><strong>Medizin ist kein Menüpunkt – sie ist ein essenzieller Teil deines RP-Lebens.</strong></p>
+  </section>
+
+  <!-- Kriminalität & Unterwelt -->
+  <section id="kriminalitaet">
+    <h2>🧵 Kriminalität & Unterwelt</h2>
+    <hr><br>
+    <p>
+      <strong>Kriminalität ist kein Zufall – sie ist ein Spiegel von Gesellschaft, Armut, Macht und Entscheidung.</strong>
+    </p>
+    <ul>
+      <li><b>Illegale Aktivitäten:</b> Raub, Erpressung, Heists, Traphouse-Überfälle, Geiselnahmen mit Planung & Risiko.</li>
+      <li><b>Unterweltstrukturen:</b> Gangs, Mafias, Kartelle, Gebietskontrolle & Graffiti.</li>
+      <li><b>Traphouses & Angebot-Nachfrage:</b> Drogen-, Waffen-, Hehlerpreise je nach tatsächlicher Marktlage und Verkauf.</li>
+      <li><b>Graffiti & Gebietsmarkierungen:</b> Fraktionen markieren Territorien, reinigen oder erobern Gebiete.</li>
+      <li><b>NPC-Interaktion & Betrugsmechanik:</b> Verkauf an NPCs mit Risiko, dynamischem Preis und Polizeireaktion.</li>
+      <li><b>Hostage- & Überfall-System:</b> Geiselnahme, Cutscene-Verhöre, Erpressungen.</li>
+      <li><b>Lockpicking & Einbruch:</b> Schlösser an Häusern/Fahrzeugen/Tresoren knacken – mit Risiko.</li>
+      <li><b>Polizei- & Dispatch-System:</b> NPCs und Kameras lösen echte Police-Dispatches und Wanted-Status aus.</li>
+    </ul>
+    <p>
+      <strong>Verbrechen braucht Kontakte, Wissen, RP – und Konsequenz.</strong> In der Unterwelt gibt es kein Tutorial – jede Entscheidung hat ihren Preis.
+    </p>
+  </section>
+
+  <!-- Drogensystem -->
+  <section id="drogen">
+    <h2>🍄 Drogensystem</h2>
+    <hr><br>
+    <p>
+      <strong>Drogen sind mehr als ein Risiko – sie sind Wirtschaftszweig, Machtinstrument und moralisches Dilemma.</strong>
+    </p>
+    <ul>
+      <li><b>Anbau & Herstellung:</b> Von Marihuana, Kokain, Heroin bis synthetische Stoffe – Anbau, Verarbeitung, Mischung, Portionierung, Verpackung. Erfordert Wissen, Erfahrung und passende Orte.</li>
+      <li><b>Automatisierung & Kontrolle:</b> Kartelle haben automatische Labore, andere produzieren manuell für mehr Ertrag und Risiko.</li>
+      <li><b>Transport & Distribution:</b> Schmuggelrouten, Dealer, Übergaben – jede Störung kostet.</li>
+      <li><b>Verkauf & Konsum:</b> Verkauf an NPC/Spieler, Konsum mit Folgen für Gesundheit und Sozialleben.</li>
+      <li><b>Konsequenzen & Reaktionen:</b> Polizei, Justiz, Medien und Gesellschaft reagieren – Razzien, Ermittlungen, Chancen & Risiken.</li>
+    </ul>
+    <p><strong>Drogen sind kein Shortcut – sondern eine bewusste Entscheidung mit Folgen.</strong></p>
+  </section>
+
+  <!-- Fraktionen & Organisationen -->
+  <section id="fraktionen">
+    <h2>🔠 Fraktionen & Organisationen</h2>
+    <hr><br>
+    <p>
+      <strong>Fraktionen sind mehr als Gruppen – sie sind Machtzentren mit Ideologie, Struktur und Einfluss.</strong>
+    </p>
+    <ul>
+      <li><b>Vielfalt an Gruppierungen:</b> Polizei, Justiz, Rettung, Mafia, Kartell, MC, Gangs, Unternehmen.</li>
+      <li><b>Eigene Strukturen:</b> Ränge, Regeln, Budgets, Strategien, Beförderungen und Entlassungen.</li>
+      <li><b>Exklusive Inhalte:</b> Fahrzeuge, Kleidung, Immobilien, Waffen, Produktionsketten.</li>
+      <li><b>Gebietseinfluss:</b> Kontrolle von Bezirken, Handelswegen, sichtbar und veränderbar.</li>
+      <li><b>Interaktion & Dynamik:</b> Korruption, Allianzen, Konkurrenz, Krieg – jede Entscheidung formt die Stadt.</li>
+    </ul>
+    <p><strong>Organisationen sind Bühne, Werkzeug und Verantwortung zugleich.</strong></p>
+  </section>
+
+  <!-- Crafting & Fähigkeiten -->
+  <section id="crafting">
+    <h2>🎭 Crafting & Fähigkeiten</h2>
+    <hr><br>
+    <p>
+      <strong>Wissen ist Macht – und wer etwas herstellen kann, hat Einfluss.</strong>
+    </p>
+    <ul>
+      <li><b>Erfahrungsbasiertes Crafting:</b> Mehr Anwendung = mehr Effizienz, neue Rezepte durch Fortschritt und Weitergabe.</li>
+      <li><b>Rezeptsystem mit Tiefe:</b> Jedes Produkt basiert auf echten Ressourcen, von Waffen bis Getränken.</li>
+      <li><b>Produktionsorte & Werkstätten:</b> Viele Stationen, teils offen, teils exklusiv für Fraktionen/Story.</li>
+      <li><b>Itemvielfalt & Modularität:</b> Kombination, Zerlegen, Upgrades von Objekten.</li>
+      <li><b>Freischaltbare Fähigkeiten:</b> Durch Beruf, Fraktionszugehörigkeit, Quests.</li>
+    </ul>
+    <p><strong>Crafting ist ein Weg, unersetzlich zu werden.</strong></p>
+  </section>
+
+  <!-- Events & soziale Dynamik -->
+  <section id="events">
+    <h2>🌟 Events & soziale Dynamik</h2>
+    <hr><br>
+    <p>
+      <strong>Eine Stadt lebt von ihren Menschen – und was sie aus ihr machen.</strong>
+    </p>
+    <ul>
+      <li><b>Geplante Events:</b> Rennen, Shows, Konzerte, politische Wahlen, Gerichtsverhandlungen, Empfänge uvm.</li>
+      <li><b>Dynamische Begegnungen:</b> Proteste, Flashmobs, Notfälle oder Storyelemente verändern die Welt.</li>
+      <li><b>Reputationssystem:</b> Dein Verhalten beeinflusst, wie du von anderen wahrgenommen wirst – Ruf ist wertvoll.</li>
+      <li><b>Öffentliche Räume:</b> Pubs, Studios, Clubs, Parks, Casinos, Messestände etc. für Rollenspiel auch ohne Job.</li>
+      <li><b>Soziales Gleichgewicht:</b> Arm/Reich, Macht/Ohnmacht – alles entwickelt sich dynamisch im Spiel.</li>
+    </ul>
+    <p><strong>Events sind der Pulsschlag einer lebendigen Welt.</strong></p>
+  </section>
+
+  <!-- Musik & Medienwelt -->
+  <section id="musik">
+    <h2>🎵 Musik & Medienwelt</h2>
+    <hr><br>
+    <p>
+      <strong>Kunst bewegt – auf Mad<span class="v-letter">V</span> RP wird sie zum Spielinhalt.</strong>
+    </p>
+    <ul>
+      <li><b>Musikstudio:</b> Songs aufnehmen, Covers gestalten, Ingame veröffentlichen und über Radios, Clubs oder Handys streamen.</li>
+      <li><b>Labels & Charts:</b> Labels gründen, Charts erobern, Tantiemen für Streams und Verkäufe, Ranking nach Aktivität.</li>
+      <li><b>Ingame-Musikverwertung:</b> Musik für Events, Clubs, Werbung oder Radios – mit voller Rechteverwaltung.</li>
+      <li><b>Weazel News & Medienhäuser:</b> RP als Reporter, Fotograf, Redakteur, mit Livesendungen, Artikeln, Social-Media uvm.</li>
+      <li><b>Werbesystem:</b> Werbung für Produkte, Events, Firmen – sichtbar im Spiel und auf Interfaces.</li>
+    </ul>
+    <p><strong>Musik & Medien prägen Gesellschaft und Erinnerung.</strong></p>
+  </section>
+
+  <!-- Berufe & Arbeitssystem -->
+  <section id="berufe">
+    <h2>💼 Berufe & Arbeitssystem</h2>
+    <hr><br>
+    <p>
+      <strong>Arbeit ist nicht nur Zweck – sie ist Identität, Karriere, Alltag.</strong>
+    </p>
+    <ul>
+      <li><b>Vielfältige Berufspfade:</b> Legal und illegal – Taxi, Mechaniker, Koch, Drogenschmuggler, Hitman, Fixer uvm.</li>
+      <li><b>Karriereleiter & Spezialisierung:</b> Aufstieg vom Einsteiger zum Meister, neue Tools & Möglichkeiten.</li>
+      <li><b>Selbstständigkeit & Unternehmer:</b> Eigene Betriebe gründen, Mitarbeiter einstellen, Löhne und Kunden verwalten.</li>
+      <li><b>Systemgesteuerte Jobs:</b> Müll, Hotdogs, Recycling, Transport – auch für Neue ohne Einstiegshürde.</li>
+      <li><b>Verzahnung mit Wirtschaft & RP:</b> Berufe als Teil des Wirtschaftskreislaufs, Kundenbindung und Netzwerk zählen.</li>
+    </ul>
+    <p><strong>Dein Job ist dein Platz in der Welt.</strong></p>
+  </section>
+
+  <!-- Wirtschaft & Handel -->
+  <section id="wirtschaft">
+    <h2>📈 Wirtschaft & Handel</h2>
+    <hr><br>
+    <p>
+      <strong>Eine glaubwürdige Welt braucht eine funktionierende Wirtschaft.</strong>
+    </p>
+    <ul>
+      <li><b>Realistische Preise & Strukturen:</b> Preise und Werte nach echten Vorbildern, transparente Herstellungskosten und Margen.</li>
+      <li><b>Spielergesteuerter Handel:</b> Jeder kann Händler, Produzent, Käufer sein – alles kann gehandelt werden.</li>
+      <li><b>Eigene Shops & NPC-Läden:</b> Individuelle Sortimente, Übernahme von NPC-Läden möglich.</li>
+      <li><b>Import & Logistik:</b> Planung und Ausführung von Warenimport und Logistik – macht Angriffsziele attraktiv.</li>
+      <li><b>Dynamischer Markt:</b> Angebot und Nachfrage werden von Spielern gesteuert – Preise schwanken dynamisch.</li>
+      <li><b>Staatliche Eingriffe:</b> Steuern, Subventionen, Zölle beeinflussen und regulieren den Markt.</li>
+    </ul>
+    <p><strong>Wirtschaft ist der Motor, der jede Handlung wertvoll macht.</strong></p>
+  </section>
+
+  <!-- Technologie & Systeme -->
+  <section id="technologie">
+    <h2>🚀 Technologie & Systeme</h2>
+    <hr><br>
+    <p>
+      <strong>Innovation und Technik bringen Tiefe und Realismus ins Rollenspiel.</strong>
+    </p>
+    <ul>
+      <li><b>Regierungssystem & DOJ:</b> Ausweise, Lizenzen, Wahlen, Steuern und Verwaltung als echtes UI.</li>
+      <li><b>Kamerasystem & Beweisaufnahme:</b> Polizei- und Überwachungskameras liefern Beweise, automatisierte Ablage.</li>
+      <li><b>DMV & City Hall:</b> Zentrale Systeme für Führerschein, Steuern, Unternehmensgründung.</li>
+      <li><b>Banking & Finanzen:</b> Realistische Kontentrennung, Firmenverwaltung, Steuern, Überweisungen.</li>
+      <li><b>Wetter- & Zonensteuerung:</b> Unterschiedliche Klimazonen, die Gameplay und Licht beeinflussen.</li>
+      <li><b>Drohnen & digitale Systeme:</b> Hightech als RP-Element: Überwachung, Logistik, Paketverfolgung uvm.</li>
+    </ul>
+    <p><strong>Technik ist Macht, Kontrolle und Werkzeug des Fortschritts.</strong></p>
+  </section>
+
+  <!-- Interaktionen & Immersion -->
+  <section id="interaktionen">
+    <h2>🛠️ Interaktionen & Immersion</h2>
+    <hr><br>
+    <p>
+      <strong>Immersion entsteht durch Details – und durch echte Interaktion mit der Welt.</strong>
+    </p>
+    <ul>
+      <li><b>Radialmenü & kontextsensitive Aktionen:</b> Alles basiert auf Standort, Inventar und Rolle.</li>
+      <li><b>Visualisiertes Inventar:</b> Items werden sichtbar getragen; Teilkonsum und Reste sind logisch integriert.</li>
+      <li><b>Interaktive Items & Teilkonsum:</b> Schlücke, Bissen, Reste – alles nachvollziehbar und nutzbar.</li>
+      <li><b>Graffiti-Tagging als Interaktion:</b> Gebietsmarkierungen, Entfernung, dynamische Revierkämpfe.</li>
+      <li><b>Soziales Verhalten & NPC-Reaktion:</b> Gesten, Lautstärke, Kleidung, Ruf beeinflussen soziale Dynamik.</li>
+      <li><b>Dynamische Welt:</b> Beziehungen und Standing entwickeln sich durch Handlungen und Fahrzeugzustand.</li>
+    </ul>
+    <p><strong>Du bist nicht nur dabei – du bist mitten drin.</strong></p>
+  </section>
+
+  <!-- Bedürfnisse & Lebenssystem -->
+  <section id="beduerfnisse">
+    <h2>🌟 Bedürfnisse & Lebenssystem</h2>
+    <hr><br>
+    <p>
+      <strong>Dein Charakter lebt – und spürt.</strong> Unsere Spielwelt ist kein statischer Raum, sondern ein atmendes System aus Hunger, Durst, Gesundheit, Temperatur und Psyche.
+    </p>
+    <ul>
+      <li><b>Hunger & Durst:</b> Nahrung, Getränke, Mangel = Schwäche, Kollaps oder langfristige Schäden.</li>
+      <li><b>Stress & Psyche:</b> Gefahr, Flucht, Gewalt oder Drogen wirken auf den mentalen Zustand – zu viel Stress braucht Behandlung.</li>
+      <li><b>Gesundheit & Hygiene:</b> Verletzungen, Infektionen, fehlende Pflege wirken sich spürbar aus.</li>
+      <li><b>Schlaf & Energie:</b> Wer nicht schläft, wird schwächer und fehleranfälliger.</li>
+      <li><b>Alltag & Überleben:</b> Armut = Flaschensammeln, Hotdogs verkaufen, Nahrung am Feuer, alles kann nützlich sein!</li>
+    </ul>
+    <p><strong>Du bist kein unbesiegbarer Held – sondern ein Mensch mit Grenzen und Bedürfnissen.</strong></p>
+  </section>
+
+  <!-- Freizeit & Aktivitäten -->
+  <section id="freizeit">
+    <h2>🎲 Freizeit & Aktivitäten</h2>
+    <hr><br>
+    <p>
+      <strong>Das Leben ist mehr als Arbeit – echte Geschichten entstehen in der Freizeit.</strong>
+    </p>
+    <ul>
+      <li><b>Sport & Bewegung:</b> Basketball, Fußball, Fitness, Boxen – Training beeinflusst Werte wie Ausdauer, Kraft, Psyche.</li>
+      <li><b>Freizeitparks & Events:</b> Fahrgeschäfte, Arcade-Hallen, Kartbahnen, Shows oder Wettbewerbe.</li>
+      <li><b>Glücksspiel & Unterhaltung:</b> Casino, Poker, Slots, Lotterien – Gewinne und Verluste inklusive.</li>
+      <li><b>Jagen, Angeln & Outdoor:</b> Jagdgebiete, Seen, Grillen am Feuer, Camping – Erholung pur.</li>
+      <li><b>Soziale Aktivitäten & Mini-Games:</b> Tanzen, Dart, Billard, Gesellschaftsspiele, Quiz, gemeinsames Kochen.</li>
+    </ul>
+    <p><strong>Freizeit ist der Puls einer echten Welt – hier entstehen Freunde, Geschichten, Erinnerungen.</strong></p>
+  </section>
+
+  <!-- Support & Community -->
+  <section id="support">
+    <h2>💬 Technischer Support & Community-Features</h2>
+    <hr><br>
+    <p>
+      <strong>Gemeinschaft entsteht nicht von allein – sie braucht Support, Feedback und Beteiligung.</strong>
+    </p>
+    <ul>
+      <li><b>Technischer Support:</b> Engagiertes Team bei Bugs, Account-Fragen, Scriptfehlern oder Verbindungsproblemen – im Spiel, auf Discord oder via Ticketsystem.</li>
+      <li><b>Ticketsystem & FAQ:</b> Tickets für Anliegen, FAQ für schnelle Hilfe rund ums RP.</li>
+      <li><b>Feedback & Mitgestaltung:</b> Vorschläge, Umfragen, Abstimmungen und offene Diskussionsrunden für echte Beteiligung.</li>
+      <li><b>Community-Events & Engagement:</b> Aktionen, Challenges, Giveaways, Diskussionsabende und Welcome für Neue.</li>
+      <li><b>Discord & Social Media:</b> Zentrale Anlaufstelle für News, Austausch, Events und Support in allen Kanälen.</li>
+    </ul>
+    <p><strong>Wir sind mehr als ein Server – wir sind eine Community. Jeder macht den Unterschied.</strong></p>
+  </section>
+  
+  <section id="events">
+  <h2>🌟 Events & soziale Dynamik</h2>
+  <hr><br>
+  <p>
+    <strong>Eine Stadt lebt von ihren Menschen – und was sie aus ihr machen.</strong> Mad<span class="v-letter">V</span> Roleplay bietet eine Vielzahl von Events und sozialen Mechaniken, die weit über Standardaktionen hinausgehen. Es geht nicht nur um Teilnahme – sondern um Einfluss.
+  </p>
+  <ul>
+    <li><b>Geplante Events:</b> Driftrennen, Modenschauen, Konzerte, politische Wahlen, Gerichtsverhandlungen, Reden im Rathaus oder internationale Empfänge – alles wird aktiv organisiert und ausgespielt.</li>
+    <li><b>Dynamische Begegnungen:</b> Spielerische Zufälle wie Proteste, Flashmobs, Notfälle oder mysteriöse Fremde beeinflussen die laufende Welt – gesteuert durch Spielleitung oder Storymechaniken.</li>
+    <li><b>Reputationssystem:</b> Was du tust, spricht sich herum. Dein Verhalten beeinflusst, wie dich andere Spieler, Fraktionen und sogar NPCs wahrnehmen. Ruf ist wertvoller als Geld.</li>
+    <li><b>Öffentliche Räume & Locations:</b> Pubs, Fitnessstudios, Kinos, Clubs, Parks, Messen oder Casinos – sie alle ermöglichen Rollenspiel auch ohne Jobs oder Quests. Spieler schaffen hier ihre eigenen Geschichten.</li>
+    <li><b>Soziales Gleichgewicht:</b> Ob Armut oder Reichtum, Macht oder Ohnmacht – gesellschaftliche Dynamiken entwickeln sich im Spiel. Wer Einfluss nimmt, verändert die Welt.</li>
+  </ul>
+  <p>
+    <strong>Events sind nicht der Ausnahmezustand – sie sind der Pulsschlag einer lebendigen Welt.</strong>
+  </p>
+</section>
+
+<!-- MUSIK & MEDIENWELT -->
+<section id="musik">
+  <h2>🎵 Musik & Medienwelt</h2>
+  <hr><br>
+  <p>
+    <strong>Kunst bewegt – und auf Mad<span class="v-letter">V</span> RP wird sie zum Spielinhalt.</strong> Unsere Musik- und Medienwelt ist interaktiv, kreativ und voller Möglichkeiten für Künstler, Reporter, Studios oder Zuhörer.
+  </p>
+  <ul>
+    <li><b>Musikstudio:</b> Spieler können Songs aufnehmen, Covers gestalten und diese im Spiel veröffentlichen. Songs werden redaktionell geprüft und anschließend über Radios, Clubs oder Handys abgespielt.</li>
+    <li><b>Labels & Charts:</b> Künstler können sich Labels anschließen oder eigene gründen. Es gibt öffentliche Charts, Tantiemen für Streams und Verkäufe sowie ein Rankingsystem auf Grundlage von Ingame-Aktivität.</li>
+    <li><b>Ingame-Musikverwertung:</b> Musik kann für Events, Clubs, Werbung oder NPC-Radios verwendet werden – mit voller Rechteverwaltung über das Studio-System.</li>
+    <li><b>Weazel News & Medienhäuser:</b> Spieler können als Reporter, Fotografen, Kameraleute oder Redakteure agieren. Interviews, Livesendungen, Artikel oder Social-Media-Posts gestalten aktiv das RP.</li>
+    <li><b>Werbesystem:</b> Unternehmen, Fraktionen oder Künstler können Werbung buchen – für Produkte, Veranstaltungen oder Bekanntmachungen. Sichtbar im Spiel, auf Plakaten oder digitalen Interfaces.</li>
+  </ul>
+  <p>
+    <strong>Musik & Medien sind nicht nur Dekoration – sie formen Emotionen, Gesellschaft und Erinnerung.</strong>
+  </p>
+</section>
+
+<!-- BERUFE & ARBEITSSYSTEM -->
+<section id="berufe">
+  <h2>💼 Berufe & Arbeitssystem</h2>
+  <hr><br>
+  <p>
+    <strong>Arbeit ist nicht nur Mittel zum Zweck – sie ist Identität, Karriere und Alltag.</strong> Unser Berufssystem bietet realistische Jobs mit Entwicklungsmöglichkeiten, Spezialisierungen und gesellschaftlichem Einfluss.
+  </p>
+  <ul>
+    <li><b>Vielfältige Berufspfade:</b> Spieler wählen aus einer Vielzahl legaler und illegaler Berufe – vom Taxifahrer, Mechaniker oder Koch bis zum Drogenschmuggler, Fixer oder Hitman. Jeder Beruf bringt eigene Aufgaben, Abläufe und Rollen mit sich.</li>
+    <li><b>Karriereleiter & Spezialisierung:</b> Viele Berufe ermöglichen Aufstieg – vom Einsteiger zum Meister, vom Angestellten zum Geschäftsführer. Spezialisierte Fähigkeiten, Werkzeuge und Stationen stehen nur erfahrenen Arbeitern offen.</li>
+    <li><b>Selbstständigkeit & Unternehmer:</b> Spieler können eigene Betriebe gründen, Mitarbeiter einstellen, Löhne verwalten und Kunden bedienen. Wirtschaftliche Verantwortung liegt in ihren Händen.</li>
+    <li><b>Systemgesteuerte Jobs:</b> Wer flexibel oder neu ist, kann klassische Jobs wie Müllentsorgung, Hotdog-Verkauf, Recycling oder NPC-Transport nutzen, um erste Einnahmen zu generieren – ohne Vorerfahrung.</li>
+    <li><b>Verzahnung mit Wirtschaft & RP:</b> Alle Berufe sind Teil des Wirtschaftskreislaufs – und des sozialen Gefüges. Kundenbindung, Bewertungen, Netzwerk und Zuverlässigkeit bestimmen den Erfolg.</li>
+  </ul>
+  <p>
+    <strong>Ein Job ist nicht nur Einkommen – er ist dein Platz in der Welt.</strong>
+  </p>
+</section>
+
+<!-- WIRTSCHAFT & HANDEL -->
+<section id="wirtschaft">
+  <h2>📈 Wirtschaft & Handel</h2>
+  <hr><br>
+  <p>
+    <strong>Eine glaubwürdige Welt braucht eine funktionierende Wirtschaft.</strong> Bei Mad<span class="v-letter">V</span> RP basiert das gesamte System auf Angebot, Nachfrage, Risiko und Strategie – von der Ressourcengewinnung bis zum Endverkauf.
+  </p>
+  <ul>
+    <li><b>Realistische Preise & Strukturen:</b> Die Preise für Waren, Fahrzeuge, Immobilien oder Dienstleistungen orientieren sich an echten Vorbildern. Herstellungskosten, Gewinnmargen und Marktwerte sind nachvollziehbar.</li>
+    <li><b>Spielergesteuerter Handel:</b> Jeder Spieler kann Händler, Produzent oder Käufer sein. Ob über Ladengeschäfte, Schwarzmärkte oder mobile Verkaufsstellen – alles, was existiert, kann gehandelt werden.</li>
+    <li><b>Eigene Shops & NPC-Läden:</b> Spieler können eigene Geschäfte eröffnen, individuelle Sortimente führen und sogar klassische NPC-Läden ablösen. Wer kreativ handelt, bestimmt das Angebot der Stadt.</li>
+    <li><b>Import & Logistik:</b> Bestimmte Waren müssen importiert oder durch Logistikunternehmen bewegt werden. Belieferung, Lagerung und Transport erfordern Planung – und machen Angriffsziele interessant.</li>
+    <li><b>Dynamischer Markt:</b> Angebot und Nachfrage verändern sich durch Spielerverhalten. Beliebte Güter steigen im Preis – Überproduktion führt zu Wertverlust. Wer clever wirtschaftet, erzielt Macht und Wohlstand.</li>
+    <li><b>Staatliche Eingriffe:</b> Steuern, Lizenzen, Subventionen und Zölle beeinflussen die Wirtschaft. Die Regierung reguliert – oder manipuliert – den Markt, je nach Machtverhältnissen.</li>
+  </ul>
+  <p>
+    <strong>Wirtschaft ist kein Selbstläufer – sie ist der Motor, der jede Handlung wertvoll macht.</strong>
+  </p>
+</section>
+
+<!-- TECHNOLOGIE & SYSTEME -->
+<section id="technologie">
+  <h2>🚀 Technologie & Systeme</h2>
+  <hr><br>
+  <p>
+    <strong>Innovation und Technik bringen Tiefe und Realismus ins Rollenspiel.</strong> Unsere Systeme ermöglichen komplexe Abläufe, immersives Verhalten und dynamische Steuerung – für Spieler, Fraktionen und Verwaltung.
+  </p>
+  <ul>
+    <li><b>Regierungssystem & DOJ:</b> Vom Ausweis bis zur Wahl – alle staatlichen Funktionen sind spielbar. Gesetze, Verfassungen, Wahlsysteme, Lizenzen, Staatsfinanzen und Verwaltung sind realistisch abgebildet.</li>
+    <li><b>Kamerasystem & Beweisaufnahme:</b> Polizei- und Überwachungskameras zeichnen Beweise auf, die automatisiert in Inventare oder Discord übertragen werden können – für echte Ermittlungsarbeit.</li>
+    <li><b>DMV & City Hall:</b> Führerscheine, Steuern, Dokumente und Unternehmensgründungen laufen über ein zentrales, steuerbares UI mit Dokumentation, Bearbeitungszeit und Rückmeldung.</li>
+    <li><b>Banking & Finanzen:</b> Alle Konten sind realistisch getrennt: privat, geschäftlich, staatlich. Überweisungen, Steuern, Firmenverwaltung und Gesellschaftskonten funktionieren über klar definierte Wege.</li>
+    <li><b>Wetter- & Zonensteuerung:</b> Unterschiedliche Wetterzonen sorgen für echtes Klima: städtisch, tropisch, bergig. Jede Region hat eigene Witterung, Lichtverhältnisse und Temperatur – beeinflusst auch Gameplay.</li>
+    <li><b>Drohnen, Terminals, digitale Systeme:</b> Hightech wird im RP greifbar. Ob Überwachung, Paketverfolgung, Registrierung, Sicherheitszugänge oder Logistik – moderne Technik wird zu Handlungselementen.</li>
+  </ul>
+  <p>
+    <strong>Technik ist nicht nur Mittel – sie ist Macht, Kontrolle und Werkzeug des Fortschritts.</strong>
+  </p>
+</section>
+
+<!-- INTERAKTIONEN & IMMERSION -->
+<section id="interaktionen">
+  <h2>🛠️ Interaktionen & Immersion</h2>
+  <hr><br>
+  <p>
+    <strong>Immersion entsteht durch Details – und durch echte Interaktion mit der Welt.</strong> Bei Mad<span class="v-letter">V</span> RP kannst du nicht nur reden oder kämpfen – du agierst mit deiner Umwelt, mit Dingen, mit Menschen, mit Sinn und Konsequenz.
+  </p>
+  <ul>
+    <li><b>Radialmenü & Kontextsensitive Aktionen:</b> Ob du jemanden begrüßt, etwas öffnest, auspackst, zündest oder trägst – jede Aktion basiert auf deinem Standort, deinem Inventar und deiner Rolle.</li>
+    <li><b>Visualisiertes Inventar & Objektdarstellung:</b> Items werden sichtbar getragen (Waffen, Taschen, Kleidung). Flüssigkeiten werden in Gläser gegossen, Zigaretten angezündet, Schachteln geöffnet – alles nachvollziehbar und mit Konsequenz.</li>
+    <li><b>Interaktive Items & Teilkonsum:</b> Konsum erfolgt realistisch – in Schlücken oder Bissen. Restmengen bleiben erhalten, Flaschen haben Füllstände, Zigaretten brennen ab. Was du besitzt, siehst du, nutzt du – und verlierst du. Reste können ins Inventar zurück oder wiederverwendet werden.</li>
+    <li><b>Graffiti-Tagging als Interaktion:</b> Fraktionen und Spieler können mit speziellen Interaktionen Graffiti an Wänden oder Böden platzieren und feindliche Tags entfernen. So entstehen dynamische Gebietsmarkierungen und Revierkämpfe als Teil der Welt.</li>
+    <li><b>Soziales Verhalten & NPC-Reaktion:</b> Tanzen, Händeschütteln, Umarmen, Erschrecken, sich hinlegen, schreien, beten – jede Handlung hat ein animiertes Gegenstück und beeinflusst das soziale Miteinander. NPCs und Spieler reagieren auf Gesten, Lautstärke, Nähe, Kleidung oder Reputation. Wer sich auffällig verhält, wird gesehen – oder gemieden.</li>
+    <li><b>Dynamische Welt:</b> Beziehungen zu NPCs und Fraktionen entwickeln sich durch dein Handeln – jede Aktion, jedes Fahrzeug und sogar der technische Zustand deiner Autos beeinflussen dein Standing und die Reaktion der Welt.</li>
+  </ul>
+  <p>
+    <strong>Du bist nicht nur dabei – du bist mitten drin.</strong> Deine Handlungen verändern deine Umgebung, dein Ruf definiert deine Beziehungen.
+  </p>
+</section>
+
+<!-- BEDÜRFNISSE & LEBENSSYSTEM -->
+<section id="beduerfnisse">
+  <h2>🌟 Bedürfnisse & Lebenssystem</h2>
+  <hr><br>
+  <p>
+    <strong>Dein Charakter lebt – und spürt.</strong> Unsere Spielwelt ist kein statischer Raum, sondern ein atmendes System aus Hunger, Durst, Gesundheit, Temperatur und geistigem Zustand.
+  </p>
+  <ul>
+    <li><b>Hunger & Durst:</b> Nahrung und Getränke sind lebenswichtig. Ob Hotdogs, edle Menüs oder abgekochtes Wasser aus der Plastikflasche – jede Entscheidung beeinflusst deinen Zustand. Mangel führt zu Schwäche, Kollaps oder langfristigen Problemen.</li>
+    <li><b>Stress & Psyche:</b> Permanente Gefahr, Flucht, Gewalt oder Drogenkonsum wirken sich auf den mentalen Zustand deines Charakters aus. Zu viel Stress hat Folgen – die mit RP, Medikamenten oder Ruhe behandelt werden müssen.</li>
+    <li><b>Gesundheit & Hygiene:</b> Verletzungen, Infektionen, Blutverlust oder fehlende Pflege beeinflussen deinen Zustand. Sauberkeit, Erste Hilfe oder Klinikbesuche sind essenziell für langfristiges Überleben.</li>
+    <li><b>Schlaf & Energie:</b> Dein Charakter ermüdet. Wer sich nicht ausruht, wird langsamer, verliert Fokus und ist anfälliger für Unfälle oder Krankheiten.</li>
+    <li><b>Alltag & Überleben:</b> Wer kein Geld hat, kann Plastikflaschen aus dem Müll sammeln und günstig auffüllen, Nahrung am Lagerfeuer zubereiten oder sich durch kleine Jobs wie Hotdog-Verkäufe über Wasser halten. Alles, was du findest, kann nützlich sein!</li>
+  </ul>
+  <p>
+    <strong>Du bist kein unbesiegbarer Held – sondern ein Mensch mit Grenzen, Bedürfnissen und einem Körper, den du schützen musst.</strong>
+  </p>
+</section>
+
+<!-- FREIZEIT & AKTIVITÄTEN -->
+<section id="freizeit">
+  <h2>🎲 Freizeit & Aktivitäten</h2>
+  <hr><br>
+  <p>
+    <strong>Das Leben ist mehr als Arbeit – echte Geschichten entstehen in der Freizeit.</strong> Unser Server bietet eine breite Palette an Freizeit- und Unterhaltungsangeboten, die weit über das klassische Rollenspiel hinausgehen. Wer Spaß sucht, findet hier Erlebnisse, Kontakte und Ausgleich – allein, mit Freunden oder als Event für die ganze Community.
+  </p>
+  <ul>
+    <li><b>Sport & Bewegung:</b> Basketball, Fußball, Fitnessstudios, Boxclubs oder Joggingrunden – hier bleibt niemand untätig. Training beeinflusst nicht nur die Fitness, sondern auch Werte wie Ausdauer, Kraft oder mentale Gesundheit.</li>
+    <li><b>Freizeitparks & Events:</b> Fahrgeschäfte am Pier, Arcade-Hallen, Kartbahnen oder Kirmes sorgen für Abwechslung. Wer will, organisiert eigene Turniere, Shows oder Wettbewerbe – vom Karaoke bis zum Drift-Contest.</li>
+    <li><b>Glücksspiel & Unterhaltung:</b> Casino, Poker, Spielautomaten oder Lotterien – der Nervenkitzel wartet an vielen Ecken. Gewinne und Verluste gehören zum echten Leben dazu.</li>
+    <li><b>Jagen, Angeln & Outdoor:</b> In ausgewiesenen Jagdgebieten und an Seen erleben Spieler die Natur: Tiere verfolgen, Fische fangen, am Lagerfeuer grillen oder gemeinsam zelten – Erholung garantiert.</li>
+    <li><b>Soziale Aktivitäten & Mini-Games:</b> Tanzen, Dart, Billard, Gesellschaftsspiele, Quiz-Abende, Flashmobs oder gemeinsames Kochen – für jeden Geschmack ist etwas dabei. Spontane Begegnungen machen die Welt lebendig.</li>
+  </ul>
+  <p>
+    <strong>Freizeit ist kein Lückenfüller – sie ist der Puls einer echten Welt.</strong> Wer sie nutzt, findet Freunde, Geschichten und Erinnerungen, die bleiben.
+  </p>
+</section>
+  <section id="cityhall">
+  <h2>🏢 City Hall & DMV</h2>
+  <hr><br>
+  <p>
+    <strong>Die City Hall ist das Herz der Verwaltung.</strong> Hier laufen alle Fäden der Bürokratie zusammen: Ausweise, Dokumente, Führerscheine und Unternehmensgründungen werden über ein echtes Interface geregelt.
+  </p>
+  <ul>
+    <li><b>Bürgerservice:</b> Beantrage Ausweis, Reisepass, Führerschein oder Gewerbeschein – mit Wartezeiten, Rückmeldungen und echten Formularen.</li>
+    <li><b>Führerschein-Prüfungen:</b> Theorie und Praxis im DMV – wer durchfällt, muss üben und erneut antreten.</li>
+    <li><b>Dokumentenverwaltung:</b> Jedes Dokument ist digital gespeichert, kontrollierbar und manipulationssicher.</li>
+    <li><b>Unternehmensgründung:</b> Firmenanmeldung und Genehmigungen direkt im Rathaus. Alles ist protokolliert.</li>
+    <li><b>Öffnungszeiten & Termine:</b> Nicht immer ist jemand da – Zeitmanagement spielt eine Rolle.</li>
+  </ul>
+  <p><strong>Verwaltung ist nicht lästig – sie macht den Staat erst real.</strong></p>
+</section>
+<section id="polizei">
+  <h2>🚓 Polizei & Rettung</h2>
+  <hr><br>
+  <p>
+    <strong>Sicherheit und Ordnung sind keine Selbstläufer.</strong> Polizei und Rettungsdienste bilden das Rückgrat der Stadt – von Streife bis Großfahndung.
+  </p>
+  <ul>
+    <li><b>Polizeisystem:</b> Echte Ermittlungen, Akten, Ausrüstungen und Fahrzeuge – von der Streife bis Sondereinheit.</li>
+    <li><b>Fahndung & Einsatz:</b> Verfolgungen, Ermittlungen, Hausdurchsuchungen, Undercover-Arbeit und Einsätze mit Teamwork.</li>
+    <li><b>Wanted-System:</b> Automat. Verbrechensmeldung durch NPCs, Kameras, Dispatchs und Kopfgeld-Funktionen.</li>
+    <li><b>Rettungsdienst:</b> Sanitäter mit echten Skills, Fahrzeugen und Zugriff auf Notfallausrüstung.</li>
+    <li><b>Zusammenarbeit:</b> Polizei, Rettung und Feuerwehr greifen nahtlos ineinander.</li>
+  </ul>
+  <p><strong>Schutz und Ordnung entstehen durch echtes Engagement – und Konsequenzen.</strong></p>
+</section>
+<section id="dispatch">
+  <h2>🚨 Dispatch- & Air-Defense-System</h2>
+  <hr><br>
+  <p>
+    <strong>Alarm, Verfolgung und Lufthoheit – alles digital gesteuert.</strong> Das Dispatch-System verknüpft Polizei, Rettung, Feuerwehr und Air-Defense.
+  </p>
+  <ul>
+    <li><b>Dispatch-Meldungen:</b> NPCs, Kameras und Spieler lösen Alarme aus – mit direkter Leitstelle für Notrufe, Überfälle, Einbrüche oder Unfälle.</li>
+    <li><b>Air-Defense:</b> Sperrgebiete, Luftraumüberwachung, automatische Warnungen und Abschüsse – gesteuert durch Job, Rang und Lizenz.</li>
+    <li><b>Live-Tracking:</b> Fahrzeuge und Personen können bei Bedarf von der Zentrale verfolgt werden.</li>
+    <li><b>Reaktion & Eskalation:</b> Je nach Priorität rücken Einheiten unterschiedlich schnell aus.</li>
+  </ul>
+  <p><strong>Technische Unterstützung entscheidet über Erfolg oder Misserfolg bei Notlagen.</strong></p>
+</section>
+<section id="straftaten">
+  <h2>⚠️ Straftaten & Überfälle</h2>
+  <hr><br>
+  <p>
+    <strong>Jede Straftat ist ein Risiko – und ein Spiel mit dem Feuer.</strong>
+  </p>
+  <ul>
+    <li><b>Raub & Überfall:</b> Von Taschendiebstahl bis zum Bankraub – alles braucht Planung, Ausrüstung und Mut.</li>
+    <li><b>Heists & Einbrüche:</b> Ausgefeilte Abläufe mit mehreren Spielern, Echtzeit-Alarm und Polizei-Reaktion.</li>
+    <li><b>Entführung & Geiselnahme:</b> Spielbar mit Interaktionssystem, Polizei-Negotiation und echten Konsequenzen.</li>
+    <li><b>Flucht & Verfolgung:</b> Fahrzeuge, Helikopter oder zu Fuß – Wer entkommt, hat Glück und Können bewiesen.</li>
+    <li><b>Strafen & Akten:</b> Jedes Vergehen wird gespeichert, verfolgt und wirkt sich langfristig aus.</li>
+  </ul>
+  <p><strong>Das Gesetz schläft nie – und ein Fehler reicht für eine lange Haft.</strong></p>
+</section>
+<section id="traphouse">
+  <h2>🏚️ Traphouse & Angebot/Nachfrage</h2>
+  <hr><br>
+  <p>
+    <strong>Der Untergrund hat sein eigenes Gesetz – und seine eigenen Märkte.</strong>
+  </p>
+  <ul>
+    <li><b>Traphouses:</b> Versteckte Orte für Drogenproduktion, Waffenhandel oder Geldwäsche – steuerbar, übernehmbar, verteidigbar.</li>
+    <li><b>Angebot & Nachfrage:</b> Preise für illegale Güter ändern sich dynamisch nach Verkaufsmengen und Polizei-Druck.</li>
+    <li><b>Übernahmen:</b> Gangs und Mafias können Traphouses durch RP oder Gewalt übernehmen.</li>
+    <li><b>Sicherheit:</b> Nur Eingeweihte haben Zutritt – mit Schlüssel, Code oder Fraktionsrecht.</li>
+    <li><b>Risiko:</b> Polizei- oder Gangrazzien können alles beenden – oder zum Gegenschlag führen.</li>
+  </ul>
+  <p><strong>Im Schatten entscheidet das Spiel um Angebot und Macht.</strong></p>
+</section>
+<section id="hostage">
+  <h2>🔪 Geisel-/Hostage-System</h2>
+  <hr><br>
+  <p>
+    <strong>Jede Geiselnahme ist ein Hochrisiko-Spiel – für Täter, Opfer und Polizei.</strong>
+  </p>
+  <ul>
+    <li><b>Geiselmechanik:</b> Echte Cutscene-Interaktionen, Hostage-Take und Negotiation-Prozesse mit Polizei.</li>
+    <li><b>Erpressung & Forderungen:</b> Geld, Fluchtwagen oder Freilassung von Mitspielern – alles ist möglich.</li>
+    <li><b>Opferschutz:</b> Kein echter Schaden, aber intensives RP und Auswirkungen auf Psyche und Ruf.</li>
+    <li><b>Polizeitaktik:</b> Zugriff, Verhandlungen, Ablenkung – echtes Zusammenspiel nötig.</li>
+  </ul>
+  <p><strong>Ein Geiseldrama verändert das Schicksal vieler Beteiligter.</strong></p>
+</section>
+<section id="einbruch">
+  <h2>🔓 Einbruch & Lockpicking</h2>
+  <hr><br>
+  <p>
+    <strong>Einbruch braucht Geduld, Timing – und die richtigen Tools.</strong>
+  </p>
+  <ul>
+    <li><b>Lockpicking-System:</b> Minigames für Schlösser an Türen, Autos, Tresoren – mit steigendem Schwierigkeitsgrad.</li>
+    <li><b>Risiko & Alarm:</b> Jedes Knacken kann einen Alarm auslösen, NPCs oder Kameras melden an die Polizei.</li>
+    <li><b>Loot:</b> Zufällige, wertvolle oder nutzlose Gegenstände – von Butterbrot bis Goldbarren.</li>
+    <li><b>Einbrüche:</b> Von Wohnungen bis Juwelier – jeder Ort hat sein eigenes Risiko.</li>
+    <li><b>Ermittlungen:</b> Spuren, Kameras und Zeugen führen zur Festnahme oder Beobachtung.</li>
+  </ul>
+  <p><strong>Wer einbricht, spielt mit dem Feuer – und kann alles verlieren.</strong></p>
+</section>
+<section id="hehler">
+  <h2>🛒 Schwarzmarkt & Hehler</h2>
+  <hr><br>
+  <p>
+    <strong>Geklautes Gut ist wertlos – bis der richtige Käufer gefunden ist.</strong>
+  </p>
+  <ul>
+    <li><b>Hehlerei:</b> Geklaute Waren an spezielle NPCs oder Spieler verkaufen – mit Risiko auf Erpressung oder Betrug.</li>
+    <li><b>Schwarzmarkt:</b> Verdeckte Marktplätze für illegale Waren, Fahrzeuge und Informationen.</li>
+    <li><b>Preisbildung:</b> Je nach Angebot, Nachfrage und Polizei-Druck.</li>
+    <li><b>Netzwerk:</b> Nur wer Kontakte hat, findet die besten Deals und bleibt unentdeckt.</li>
+    <li><b>Risiko:</b> Jede Transaktion kann eine Falle sein – Polizei, Rivalen oder Betrüger.</li>
+  </ul>
+  <p><strong>Der Hehler entscheidet, was Diebesgut wert ist.</strong></p>
+</section>
+<section id="waffen">
+  <h2>🔫 Waffen & Schmuggel</h2>
+  <hr><br>
+  <p>
+    <strong>Waffen sind Macht – und ihr Handel ist verboten.</strong>
+  </p>
+  <ul>
+    <li><b>Schmuggelrouten:</b> Von Übersee bis Wüste – Transport mit Risiko und Koordination.</li>
+    <li><b>Herstellung:</b> Eigenes Crafting für Waffen, Munition, Upgrades – nur für Wissende.</li>
+    <li><b>Waffenhändler:</b> Verdeckte Verkäufer, wechselnde Standorte, Zugang nur mit Kontakt.</li>
+    <li><b>Import & Export:</b> Waffen können importiert, individualisiert und weiterverkauft werden.</li>
+    <li><b>Risiko:</b> Polizei und Gangs kontrollieren die Handelswege – jeder Fehler kann alles kosten.</li>
+  </ul>
+  <p><strong>Waffenhandel ist ein riskantes Geschäft mit hohem Ertrag – oder lebenslangem Gefängnis.</strong></p>
+</section>
+<section id="graffiti">
+  <h2>🎨 Graffiti-System & Gebietsmarkierung</h2>
+  <hr><br>
+  <p>
+    <strong>Gebiete werden nicht durch Verträge, sondern durch Farbe und Präsenz markiert.</strong>
+  </p>
+  <ul>
+    <li><b>Tagging:</b> Fraktionen markieren ihr Gebiet mit individuellen Graffitis – jederzeit sichtbar.</li>
+    <li><b>Entfernung & Übermalen:</b> Rivalen können Tags entfernen, überschreiben oder zerstören.</li>
+    <li><b>Revierkämpfe:</b> Gebietsstreitigkeiten werden durch Graffiti und Aktionen im RP ausgetragen.</li>
+    <li><b>Polizeireaktion:</b> Illegales Tagging wird verfolgt – Kameras und Zeugen führen zu Strafen.</li>
+    <li><b>Kreativität:</b> Eigene Motive, Farben und Styles – Ausdruck der Gruppenkultur.</li>
+  </ul>
+  <p><strong>Graffiti ist mehr als Farbe – es ist Macht und Geschichte auf jeder Mauer.</strong></p>
+</section>
+<section id="unternehmen">
+  <h2>🏪 Unternehmen & Shops</h2>
+  <hr><br>
+  <p>
+    <strong>Geschäfte sind das Rückgrat der Wirtschaft – und der perfekte Einstieg ins Unternehmertum.</strong>
+  </p>
+  <ul>
+    <li><b>Shopsystem:</b> Eigene Läden kaufen, individuelle Sortimente anlegen, Preise festlegen und Mitarbeiter einstellen.</li>
+    <li><b>Spielergeführte Unternehmen:</b> Jeder kann eine Firma gründen, expandieren oder spezialisierte Dienstleistungen anbieten.</li>
+    <li><b>NPC-Shops:</b> Standardläden, die von Spielern übernommen werden können.</li>
+    <li><b>Handel & Wettbewerb:</b> Konkurrenz belebt das Geschäft – Preise, Angebote und Service entscheiden über Erfolg.</li>
+    <li><b>Werbung:</b> Marketing im Spiel und auf Interfaces sorgt für Aufmerksamkeit und Kunden.</li>
+  </ul>
+  <p><strong>Wer ein Unternehmen aufbaut, kann reich werden – oder alles verlieren.</strong></p>
+</section>
+<section id="ressourcen">
+  <h2>🪨 Ressourcen & Produktion</h2>
+  <hr><br>
+  <p>
+    <strong>Alles beginnt mit Rohstoffen – und endet in der Hand der Spieler.</strong>
+  </p>
+  <ul>
+    <li><b>Ressourcenabbau:</b> Holzfällen, Minen, Felder, Farmen, Sammeln – alles ist nachvollziehbar und Teil der Welt.</li>
+    <li><b>Produktionsketten:</b> Von Rohmaterial zu Endprodukt: Schmieden, Werkstätten, Fabriken und Labore.</li>
+    <li><b>Veredelung:</b> Erz wird zu Barren, Rohstoffe zu Bauteilen, Zutaten zu Speisen oder Medikamenten.</li>
+    <li><b>Transport & Logistik:</b> Güter müssen bewegt, gelagert und gehandelt werden.</li>
+    <li><b>Marktdynamik:</b> Seltene Ressourcen sind wertvoll – und Anlass für Konflikte oder Kooperationen.</li>
+  </ul>
+  <p><strong>Wer Ressourcen kontrolliert, kontrolliert das Spiel.</strong></p>
+</section>
+<section id="fahrzeuge">
+  <h2>🚗 Fahrzeuge & Garagen</h2>
+  <hr><br>
+  <p>
+    <strong>Autos sind Statussymbol, Werkzeug und Spielfeld zugleich.</strong>
+  </p>
+  <ul>
+    <li><b>Garagensystem:</b> Fahrzeuge werden realistisch geparkt und bleiben nach Server-Restart am Abstellort.</li>
+    <li><b>Fahrzeugkauf:</b> Neue und gebrauchte Autos, Leasing und Finanzierung, mit echtem Wertverlust.</li>
+    <li><b>Fahrzeughandel:</b> Händler, Auktionen und Privatverkauf – Angebot und Nachfrage bestimmen den Preis.</li>
+    <li><b>Modifikationen:</b> Tuning, Lackierungen, Aufkleber, Felgen und Sonderumbauten.</li>
+    <li><b>Fahrzeugmanagement:</b> Zulassung, Versicherungen, Wartung und Inspektion.</li>
+  </ul>
+  <p><strong>Wer Auto fährt, lebt in Bewegung – und im Risiko.</strong></p>
+</section>
+<section id="wetter">
+  <h2>🌦️ Wetter- & Zonensteuerung</h2>
+  <hr><br>
+  <p>
+    <strong>Das Klima beeinflusst alles – Licht, Stimmung, Risiko und Chancen.</strong>
+  </p>
+  <ul>
+    <li><b>Wetterzonen:</b> Unterschiedliche Regionen mit eigenem Wetter: Stadt, Wüste, Berge, Strand, Tropen.</li>
+    <li><b>Dynamisches Wetter:</b> Sonne, Regen, Nebel, Sturm – alles beeinflusst Sicht, Verhalten und Events.</li>
+    <li><b>Saisonale Effekte:</b> Jahreszeiten, Tageszeiten, Events mit Wetterbindung (z.B. Schnee zu Weihnachten).</li>
+    <li><b>Gameplay-Auswirkungen:</b> Wetter beeinflusst Kleidung, Krankheit, Fahrzeugverhalten und Produktionsmöglichkeiten.</li>
+    <li><b>Visuals:</b> Lichtstimmungen, Sonnenuntergänge, Blitze – für echtes Ambiente.</li>
+  </ul>
+  <p><strong>Das Wetter macht jede Session einzigartig.</strong></p>
+</section>
+<section id="kameras">
+  <h2>📷 Kamera- & Überwachungssystem</h2>
+  <hr><br>
+  <p>
+    <strong>Überwachung schafft Sicherheit – und Misstrauen.</strong>
+  </p>
+  <ul>
+    <li><b>Stadtweite Kameras:</b> Polizei, Unternehmen und Fraktionen können Überwachungskameras aufstellen und nutzen.</li>
+    <li><b>Beweisaufnahme:</b> Aufzeichnungen werden automatisch gespeichert und für Ermittlungen nutzbar.</li>
+    <li><b>Polizeikameras:</b> Live-Feeds, Alarme und Bildübertragung ins Discord oder Inventar.</li>
+    <li><b>Datenschutz:</b> Nicht jeder Bereich ist überwachbar – Rechte und Zugriffe sind geregelt.</li>
+    <li><b>Sabotage:</b> Kriminelle können Kameras zerstören oder manipulieren.</li>
+  </ul>
+  <p><strong>Wer überwacht, hat die Kontrolle – aber auch Verantwortung.</strong></p>
+</section>
+<section id="drohnen">
+  <h2>🛰️ Drohnen & Terminals</h2>
+  <hr><br>
+  <p>
+    <strong>Drohnen eröffnen neue Wege – von Überwachung bis Logistik.</strong>
+  </p>
+  <ul>
+    <li><b>Überwachungsdrohnen:</b> Polizei, Sicherheit und Unternehmen nutzen Drohnen für Livebilder und Standortüberwachung.</li>
+    <li><b>Paketdrohnen:</b> Automatisierte Lieferungen und Sendungsverfolgung für Shops und Spieler.</li>
+    <li><b>Fernsteuerung:</b> Terminals für Steuerung, Übernahme und Wartung – inklusive Sicherheitsmechanik.</li>
+    <li><b>RP-Features:</b> Spionage, Ausspähen, Sabotage oder Events mit Drohneneinsatz.</li>
+    <li><b>Upgrade-System:</b> Geschwindigkeit, Reichweite, Tarnung und Spezialfunktionen ausbaubar.</li>
+  </ul>
+  <p><strong>Drohnen machen das Unmögliche möglich – oder überwachen jeden Schritt.</strong></p>
+</section>
+<section id="banking">
+  <h2>🏦 Banking & Finanzen</h2>
+  <hr><br>
+  <p>
+    <strong>Geld regiert die Welt – besonders im Rollenspiel.</strong>
+  </p>
+  <ul>
+    <li><b>Bankkonten:</b> Strikte Trennung von Privat-, Geschäfts- und Staatskonten. Überweisungen, Bargeld, Abhebungen und Einzahlungen.</li>
+    <li><b>Online-Banking:</b> Digitale Kontoverwaltung, Rechnungsstellung und Zahlungsaufträge im Spiel oder via App.</li>
+    <li><b>Kredite & Schulden:</b> Aufnahme, Rückzahlung, Inkasso und Bonitätsprüfung – echtes Finanzsystem.</li>
+    <li><b>Tresore & Automaten:</b> Geldautomaten, Tresore, Bargeldlager – alles mit Risiko für Überfälle.</li>
+    <li><b>Firmenfinanzen:</b> Verwaltung von Gesellschaftskonten, Löhnen, Steuern und Rücklagen.</li>
+  </ul>
+  <p><strong>Bankgeschäfte sind nicht langweilig – sondern dein Schlüssel zur Macht.</strong></p>
+</section>
+<section id="propfeature">
+  <h2>🏗️ Prop- & Mapping-System</h2>
+  <hr><br>
+  <p>
+    <strong>Jeder kann Spuren hinterlassen – sichtbar und dauerhaft.</strong>
+  </p>
+  <ul>
+    <li><b>Propsystem:</b> Spieler und Fraktionen können Objekte, Dekorationen und Infrastruktur dauerhaft setzen oder entfernen.</li>
+    <li><b>Bühnenbau & Events:</b> Temporäre Bühnen, Deko oder Event-Setups für Events, Demonstrationen oder Auftritte.</li>
+    <li><b>Immobiliengestaltung:</b> Anpassung von Häusern, Shops oder Läden – innen wie außen.</li>
+    <li><b>RP-Möglichkeiten:</b> Barrieren, Fallen, Zelte, Fahrzeuge, Lichtquellen – alles ist manipulierbar.</li>
+    <li><b>Ressourcenverwaltung:</b> Props benötigen Materialien, Zeit und Pflege – Missbrauch ist ausgeschlossen.</li>
+  </ul>
+  <p><strong>Die Welt ist formbar – und du hinterlässt deinen Abdruck.</strong></p>
+</section>
+<section id="forschung">
+  <h2>🔬 Forschung & Innovation</h2>
+  <hr><br>
+  <p>
+    <strong>Wer Neues wagt, verändert die Welt – auch im Rollenspiel.</strong>
+  </p>
+  <ul>
+    <li><b>Forschungsprojekte:</b> Spieler und Unternehmen können neue Produkte, Technologien oder Fähigkeiten erforschen und entwickeln.</li>
+    <li><b>Innovations-Events:</b> Wettbewerbe, Präsentationen und Belohnungen für technische Fortschritte.</li>
+    <li><b>RP-Integration:</b> Forschung ist Teil der Berufe, Universitäten, Unternehmen und Fraktionen.</li>
+    <li><b>Patente & Schutz:</b> Innovationen können angemeldet, geschützt und exklusiv genutzt werden.</li>
+    <li><b>Langzeitwirkung:</b> Entwicklungen verändern Wirtschaft, Technik und Gameplay nachhaltig.</li>
+  </ul>
+  <p><strong>Forschung ist der Weg zur Einzigartigkeit – und zum Fortschritt der Community.</strong></p>
+</section>
+</main>
+
+  <footer style="text-align:center; margin: 2rem auto; padding: 1.5rem 1rem;">
+    <a href="https://discord.gg/madv" target="_blank" style="display:inline-block; padding: 0.75rem 1.5rem; background-color: #7289da; color: #fff; text-decoration: none; border-radius: 6px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">🔗 Unser Discord</a>
+  </footer>
+<script>
+  // Modul anzeigen und alle Dropdowns schließen
+  function showModule(id) {
+    document.querySelectorAll('main section').forEach(section => {
+      section.classList.remove('active');
+    });
+    document.getElementById(id).classList.add('active');
+    document.querySelectorAll('.main-nav .dropdown').forEach(d => d.classList.remove('open'));
+    if (document.activeElement) document.activeElement.blur();
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
+  // Dropdown-Menü-Logik (öffnet nur ein Dropdown)
+  document.querySelectorAll('.main-nav .dropdown .dropbtn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const parent = btn.parentElement;
+      const alreadyOpen = parent.classList.contains('open');
+      document.querySelectorAll('.main-nav .dropdown').forEach(d => d.classList.remove('open'));
+      if (!alreadyOpen) parent.classList.add('open');
+    });
+  });
+
+  // Schließe Dropdowns beim Klick außerhalb oder Escape
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.main-nav .dropdown').forEach(d => d.classList.remove('open'));
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === "Escape") {
+      document.querySelectorAll('.main-nav .dropdown').forEach(d => d.classList.remove('open'));
+    }
+  });
+
+  // Schließe Dropdown nach Klick auf einen Menüpunkt
+  document.querySelectorAll('.main-nav .dropdown-content button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.main-nav .dropdown').forEach(d => d.classList.remove('open'));
+    });
+  });
+</script>
+
+</body>
+</html>
